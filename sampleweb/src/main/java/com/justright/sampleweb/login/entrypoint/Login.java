@@ -28,7 +28,7 @@ public class Login extends Entrypoint<Object>{
 	public void assemble() {
 		templateComponent = new TemplateComponent();
 		loginComponent = new LoginComponent();
-		templateComponent.setContent("id1",loginComponent);
+		templateComponent.setContent("contentframe",loginComponent);
 	}
 
 	@Override

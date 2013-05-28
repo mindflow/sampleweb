@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div serverid="id1">
-<input type="text" name="formInput"/>
-<input type="submit" name="button1" value="Button1"/>
-<input type="submit" name="button2" value="Button2"/>
-<br/>
-<div serverid="id2"></div>
+	<input type="text" name="formInput" />
+	<input type="submit" name="button1" value="Button1" />
+	<input type="submit" name="button2" value="Button2" />
+	<br />
+	<div serverid="id2"></div>
 </div>

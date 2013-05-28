@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div serverid="id1" xmlns="http://mycompany.com/hr/schemas">
-	<input type="text" name="username"/><br/>
-	<input type="password" name="password"/><br/>
-	<input type="submit" name="login" value="Login"/>
-	<input type="submit" name="logout" value="Logout"/>
-	<br/>
+	<input type="text" name="username" />
+	<br />
+	<input type="password" name="password" />
+	<br />
+	<input type="submit" name="login" value="Login" />
+	<input type="submit" name="logout" value="Logout" />
+	<br />
 	<div serverid="loginMessage"></div>
 </div>

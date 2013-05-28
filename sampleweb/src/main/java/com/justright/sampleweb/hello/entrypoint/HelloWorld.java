@@ -17,12 +17,12 @@ public class HelloWorld extends Entrypoint<Object> implements Renderable{
 	public void assemble(){
 		templateComponent = new TemplateComponent();
 		helloComponent = new HelloComponent();
-		templateComponent.setContent("id1",helloComponent);
+		templateComponent.setContent("contentframe",helloComponent);
 	}
 	
 	public void load(){
 		if(model.getInput() != null){
-			templateComponent.addContent("id1",new Raw(model.getInput()));
+			templateComponent.addContent("contentframe",new Raw(model.getInput()));
 		}
 	}
 
