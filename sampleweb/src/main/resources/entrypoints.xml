@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<entrypoints>
+    <entrypoint>com.justright.sampleweb.hello.entrypoint.HelloWorld</entrypoint>
+    <entrypoint>com.justright.sampleweb.login.entrypoint.Login</entrypoint>
+</entrypoints>

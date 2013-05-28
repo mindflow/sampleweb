@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+  <body>
+  	Hello template
+  	<div serverid="id1"></div>
+  </body>
+</html>
