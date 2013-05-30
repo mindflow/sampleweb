@@ -1,9 +1,11 @@
 package com.justright.sampleweb.login.entrypoint;
 
 import com.justright.entrypoint.Entrypoint;
+import com.justright.entrypoint.EntrypointConfig;
 import com.justright.sampleweb.login.component.LoginComponent;
 import com.justright.sampleweb.template.TemplateComponent;
 
+@EntrypointConfig(uri="/Login",docType=Entrypoint.HTML_4_01_TRANSITIONAL_EN_DOCTYPE)
 public class Login extends Entrypoint<Object>{
 
 	private TemplateComponent templateComponent;
@@ -20,11 +22,6 @@ public class Login extends Entrypoint<Object>{
 	}
 
 	@Override
-	public String getDoctype() {
-		return Entrypoint.HTML_4_01_TRANSITIONAL_EN_DOCTYPE;
-	}
-
-	@Override
 	public void assemble() {
 		templateComponent = new TemplateComponent();
 		loginComponent = new LoginComponent();
@@ -33,17 +30,6 @@ public class Login extends Entrypoint<Object>{
 
 	@Override
 	public void load() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getUri() {
-		return "/Login";
-	}
-
-	@Override
-	public void validate() {
 		// TODO Auto-generated method stub
 		
 	}
