@@ -33,7 +33,7 @@ public class HelloComponent extends Component<HelloComponentModel>{
 	@EventListener("button1")
 	public void button1Clicked() {
 		someSavedValue = 10;
-		raw.setValue("Changed by click2");
+		raw.setValue("Changed by click1");
 		addContent("id1", new Raw("Button1 clicked. Input is: '" + getInputModel().getFormInput() + "' Client stored is: '" + someSavedValue + "'<br/> "));
 	}
 
