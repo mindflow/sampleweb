@@ -1,12 +1,13 @@
 package com.justright.sampleweb.hello.component;
 
-import com.justright.component.ClientStored;
-import com.justright.component.Component;
-import com.justright.component.EventListener;
-import com.justright.component.InputValidation;
+import com.justright.component.SessionComponent;
+import com.justright.component.annotation.ClientStored;
+import com.justright.component.annotation.EventListener;
+import com.justright.component.annotation.InputValidation;
+import com.justright.session.Session;
 import com.justright.xml.Raw;
 
-public class HelloComponent extends Component<HelloComponentModel>{
+public class HelloComponent extends SessionComponent<HelloComponentModel>{
 
 	private HelloComponentModel model;
 	
@@ -16,8 +17,8 @@ public class HelloComponent extends Component<HelloComponentModel>{
 	@ClientStored 
 	private Raw raw;
 	
-	public HelloComponent(){
-		super("helloComponent.xml");
+	public HelloComponent(Session session){
+		super(session,"helloComponent.xml");
 		this.enableForm("Form1");
 	}
 	

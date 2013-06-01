@@ -9,20 +9,8 @@ public class TemplateComponent extends Component<Object>{
 	}
 
 	@Override
-	public Object getInputModel() {
-		return null;
-	}
-
-	@Override
 	public void assemble() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void load() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

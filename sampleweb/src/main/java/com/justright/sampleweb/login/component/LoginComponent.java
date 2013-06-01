@@ -1,18 +1,19 @@
 package com.justright.sampleweb.login.component;
 
-import com.justright.component.Component;
-import com.justright.component.EventListener;
+import com.justright.component.SessionComponent;
+import com.justright.component.annotation.EventListener;
 import com.justright.security.DefaultRoleProvider;
 import com.justright.security.DefaultUserProvider;
 import com.justright.security.User;
+import com.justright.session.Session;
 import com.justright.xml.Raw;
 
-public class LoginComponent extends Component<LoginComponentModel>{
+public class LoginComponent extends SessionComponent<LoginComponentModel>{
 
 	private LoginComponentModel model;
 	
-	public LoginComponent(){
-		super("loginComponent.xml");
+	public LoginComponent(Session session){
+		super(session,"loginComponent.xml");
 		this.enableForm("LoginForm");
 	}
 
@@ -29,7 +30,7 @@ public class LoginComponent extends Component<LoginComponentModel>{
 		User user = new DefaultUserProvider().getUser(getInputModel().getUsername(), getInputModel().getPassword());
 		if(user != null){
 			new DefaultRoleProvider().populateRoles(user);
-			user.login();
+			getSession().login(user);
 			setContent("loginMessage", new Raw("You are logged in"));
 		}else{
 			setContent("loginMessage", new Raw("Login failed"));
@@ -38,8 +39,8 @@ public class LoginComponent extends Component<LoginComponentModel>{
 	
 	@EventListener("logout")
 	public void logout(){
-		if(User.getInstance() != null){
-			User.getInstance().logout();
+		if(getSession().getUser() != null){
+			getSession().logout();
 			setContent("loginMessage", new Raw("You are logged out"));
 		}else{
 			setContent("loginMessage", new Raw("Logout failed"));
