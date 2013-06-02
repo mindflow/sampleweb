@@ -2,7 +2,7 @@ package com.justright.sampleweb.login.component;
 
 import java.util.List;
 
-import com.justright.component.SessionComponent;
+import com.justright.component.FormComponent;
 import com.justright.component.annotation.EventListener;
 import com.justright.security.RoleProvider;
 import com.justright.security.User;
@@ -10,7 +10,7 @@ import com.justright.security.UserProvider;
 import com.justright.session.Session;
 import com.justright.xml.Raw;
 
-public class LoginComponent extends SessionComponent<LoginComponentModel>{
+public class LoginComponent extends FormComponent<LoginComponentModel>{
 	
 	private LoginComponentModel model;
 	
@@ -18,8 +18,7 @@ public class LoginComponent extends SessionComponent<LoginComponentModel>{
 	private RoleProvider roleProvider;
 	
 	public LoginComponent(Session session){
-		super(session,"loginComponent.xml");
-		this.enableForm("LoginForm");
+		super(session,"LoginForm","loginComponent.xml");
 	}
 
 	@Override
@@ -60,7 +59,7 @@ public class LoginComponent extends SessionComponent<LoginComponentModel>{
 
 	@Override
 	public void load() {
-		
+		System.out.println("Loading");
 	}
 
 	public void setUserProvider(UserProvider userProvider) {
