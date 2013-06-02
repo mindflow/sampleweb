@@ -1,16 +1,21 @@
 package com.justright.sampleweb.login.component;
 
+import java.util.List;
+
 import com.justright.component.SessionComponent;
 import com.justright.component.annotation.EventListener;
-import com.justright.security.DefaultRoleProvider;
-import com.justright.security.DefaultUserProvider;
+import com.justright.security.RoleProvider;
 import com.justright.security.User;
+import com.justright.security.UserProvider;
 import com.justright.session.Session;
 import com.justright.xml.Raw;
 
 public class LoginComponent extends SessionComponent<LoginComponentModel>{
-
+	
 	private LoginComponentModel model;
+	
+	private UserProvider userProvider;
+	private RoleProvider roleProvider;
 	
 	public LoginComponent(Session session){
 		super(session,"loginComponent.xml");
@@ -27,10 +32,10 @@ public class LoginComponent extends SessionComponent<LoginComponentModel>{
 	
 	@EventListener("login")
 	public void login(){
-		User user = new DefaultUserProvider().getUser(getInputModel().getUsername(), getInputModel().getPassword());
+		User user = userProvider.getUser(getInputModel().getUsername(), getInputModel().getPassword());
 		if(user != null){
-			new DefaultRoleProvider().populateRoles(user);
-			getSession().login(user);
+			List<String> roles = roleProvider.getRoles(user);
+			getSession().login(user,roles);
 			setContent("loginMessage", new Raw("You are logged in"));
 		}else{
 			setContent("loginMessage", new Raw("Login failed"));
@@ -55,8 +60,15 @@ public class LoginComponent extends SessionComponent<LoginComponentModel>{
 
 	@Override
 	public void load() {
-		// TODO Auto-generated method stub
 		
 	}
 
+	public void setUserProvider(UserProvider userProvider) {
+		this.userProvider = userProvider;
+	}
+
+	public void setRoleProvider(RoleProvider roleProvider) {
+		this.roleProvider = roleProvider;
+	}
+	
 }
