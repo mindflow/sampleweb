@@ -1,8 +1,8 @@
 package com.justright.sampleweb.template;
 
-import com.justright.component.Component;
+import com.justright.component.SimpleComponent;
 
-public class TemplateComponent extends Component<Object>{
+public class TemplateComponent extends SimpleComponent<Object>{
 
 	public TemplateComponent(){
 		super("templateComponent.xml");
