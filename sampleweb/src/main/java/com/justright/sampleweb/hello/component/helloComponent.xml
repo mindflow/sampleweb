@@ -5,4 +5,5 @@
 	<input type="submit" name="button2" value="Button2" />
 	<br />
 	<div serverid="id2"></div>
+	<div serverid="id3"></div>
 </div>

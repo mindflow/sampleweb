@@ -1,5 +1,7 @@
 package com.justright.sampleweb.hello.component;
 
+import java.util.Date;
+
 import com.justright.component.FormComponent;
 import com.justright.component.annotation.ClientStored;
 import com.justright.component.annotation.EventListener;
@@ -35,7 +37,7 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 	public void button1Clicked() {
 		System.out.println("HelloComponent receives button1 click");
 		someSavedValue = 10;
-		raw.setValue("Changed by click1");
+		raw.setValue("Clientstored value Changed by click1");
 		addContent("id1", new Raw("Button1 clicked. Input is: '" + getInputModel().getFormInput() + "' Client stored is: '" + someSavedValue + "'<br/> "));
 	}
 
@@ -47,13 +49,14 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 
 	@Override
 	public void assemble() {
+		raw = new Raw("Client stored value");
 		System.out.println("HelloComponent assembles");
-		this.raw = new Raw("hello World!");
-		setContent("id2", raw);
+		setContent("id2", new Date().toString());
 	}
 
 	@Override
 	public void wakeup() {
+		setContent("id3",new Date().toString());
 		System.out.println("HelloComponent wakes up");
 	}
 
