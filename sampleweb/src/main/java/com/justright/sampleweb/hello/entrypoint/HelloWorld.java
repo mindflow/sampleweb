@@ -29,6 +29,7 @@ public class HelloWorld extends Entrypoint<Object> implements Renderable{
 
 	@Override
 	public void assemble() {
+		System.out.println("HelloWorld Entrypoint assembles");
 		templateComponent = new TemplateComponent();
 		helloComponent = new HelloComponent(getSession());
 		templateComponent.setContent("contentframe",helloComponent);

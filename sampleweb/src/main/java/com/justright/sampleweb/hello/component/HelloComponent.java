@@ -19,6 +19,7 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 	
 	public HelloComponent(Session session){
 		super(session,"HelloForm","helloComponent.xml");
+		System.out.println("HelloComponent constructs");
 	}
 	
 	@Override
@@ -49,6 +50,11 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 		System.out.println("HelloComponent assembles");
 		this.raw = new Raw("hello World!");
 		setContent("id2", raw);
+	}
+
+	@Override
+	public void wakeup() {
+		System.out.println("HelloComponent wakes up");
 	}
 
 

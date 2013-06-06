@@ -53,7 +53,7 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 
 	@Override
 	public void assemble() {
-		// TODO Auto-generated method stub
+		
 	}
 
 	public void setUserProvider(UserProvider userProvider) {
@@ -62,6 +62,11 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 
 	public void setRoleProvider(RoleProvider roleProvider) {
 		this.roleProvider = roleProvider;
+	}
+
+	@Override
+	public void wakeup() {
+		
 	}
 	
 }
