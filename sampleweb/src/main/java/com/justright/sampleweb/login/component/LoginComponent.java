@@ -54,12 +54,6 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	@Override
 	public void assemble() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void load() {
-		System.out.println("Loading");
 	}
 
 	public void setUserProvider(UserProvider userProvider) {

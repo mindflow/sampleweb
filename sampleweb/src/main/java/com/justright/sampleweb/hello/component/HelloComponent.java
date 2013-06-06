@@ -48,12 +48,7 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 	public void assemble() {
 		System.out.println("HelloComponent assembles");
 		this.raw = new Raw("hello World!");
-	}
-
-	@Override
-	public void load() {
 		setContent("id2", raw);
-		System.out.println("HelloComponent loads");
 	}
 
 

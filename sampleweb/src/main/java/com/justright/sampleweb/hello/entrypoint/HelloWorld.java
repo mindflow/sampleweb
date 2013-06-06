@@ -15,19 +15,6 @@ public class HelloWorld extends Entrypoint<Object> implements Renderable{
 	private TemplateComponent templateComponent;
 	private HelloComponent helloComponent;
 	private HelloWorldModel model = new HelloWorldModel();
-	
-	public void assemble(){
-		templateComponent = new TemplateComponent();
-		helloComponent = new HelloComponent(getSession());
-	}
-	
-	public void load(){
-		System.out.println("HelloWorld Entrypoint loads");
-		templateComponent.setContent("contentframe",helloComponent);
-		if(model.getInput() != null){
-			templateComponent.addContent("contentframe",new Raw(model.getInput()));
-		}
-	}
 
 	@Override
 	public String render() {
@@ -40,4 +27,13 @@ public class HelloWorld extends Entrypoint<Object> implements Renderable{
 		return model;
 	}
 
+	@Override
+	public void assemble() {
+		templateComponent = new TemplateComponent();
+		helloComponent = new HelloComponent(getSession());
+		templateComponent.setContent("contentframe",helloComponent);
+		if(model.getInput() != null){
+			templateComponent.addContent("contentframe",new Raw(model.getInput()));
+		}
+	}
 }

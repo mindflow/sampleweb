@@ -37,12 +37,7 @@ public class Login extends Entrypoint<Object>{
 		loginComponent = new LoginComponent(getSession());
 		loginComponent.setUserProvider(userProvider);
 		loginComponent.setRoleProvider(roleProvider);
-	}
-
-	@Override
-	public void load() {
 		templateComponent.setContent("contentframe",loginComponent);
-		
 	}
 
 }
