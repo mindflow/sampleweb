@@ -10,7 +10,7 @@ public class TemplateComponent extends SimpleComponent<Object>{
 
 	@Override
 	public void assemble() {
-		// TODO Auto-generated method stub
+		System.out.println("TemplateComponent assembles");
 	}
 
 }

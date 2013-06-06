@@ -32,6 +32,7 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 	
 	@EventListener("button1")
 	public void button1Clicked() {
+		System.out.println("HelloComponent receives button1 click");
 		someSavedValue = 10;
 		raw.setValue("Changed by click1");
 		addContent("id1", new Raw("Button1 clicked. Input is: '" + getInputModel().getFormInput() + "' Client stored is: '" + someSavedValue + "'<br/> "));
@@ -39,18 +40,20 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 
 	@EventListener("button2")
 	public void button2Clicked() {
+		System.out.println("HelloComponent receives button2 click");
 		addContent("id1", new Raw("Button2 clicked. Input is: '" + getInputModel().getFormInput() + "' Client stored is: '" + someSavedValue + "'<br/> "));
 	}
 
 	@Override
 	public void assemble() {
+		System.out.println("HelloComponent assembles");
 		this.raw = new Raw("hello World!");
-		setContent("id2", raw);
 	}
 
 	@Override
 	public void load() {
-		
+		setContent("id2", raw);
+		System.out.println("HelloComponent loads");
 	}
 
 

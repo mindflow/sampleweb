@@ -37,12 +37,11 @@ public class Login extends Entrypoint<Object>{
 		loginComponent = new LoginComponent(getSession());
 		loginComponent.setUserProvider(userProvider);
 		loginComponent.setRoleProvider(roleProvider);
-		templateComponent.setContent("contentframe",loginComponent);
 	}
 
 	@Override
 	public void load() {
-		// TODO Auto-generated method stub
+		templateComponent.setContent("contentframe",loginComponent);
 		
 	}
 
