@@ -1,13 +1,10 @@
 package com.justright.sampleweb.login.component;
 
-import java.util.List;
-
 import com.justright.component.FormComponent;
 import com.justright.component.annotation.EventListener;
-import com.justright.security.RoleProvider;
+import com.justright.context.Context;
 import com.justright.security.User;
 import com.justright.security.UserProvider;
-import com.justright.session.Session;
 import com.justright.xml.Raw;
 
 public class LoginComponent extends FormComponent<LoginComponentModel>{
@@ -15,9 +12,8 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	private LoginComponentModel model;
 	
 	private UserProvider userProvider;
-	private RoleProvider roleProvider;
 	
-	public LoginComponent(Session session){
+	public LoginComponent(Context session){
 		super(session,"LoginForm","loginComponent.xml");
 	}
 
@@ -33,8 +29,7 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	public void login(){
 		User user = userProvider.getUser(getInputModel().getUsername(), getInputModel().getPassword());
 		if(user != null){
-			List<String> roles = roleProvider.getRoles(user);
-			getSession().login(user,roles);
+			getContext().login(user);
 			setContent("loginMessage", new Raw("You are logged in"));
 		}else{
 			setContent("loginMessage", new Raw("Login failed"));
@@ -43,8 +38,8 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	
 	@EventListener("logout")
 	public void logout(){
-		if(getSession().getUser() != null){
-			getSession().logout();
+		if(getContext().getUser() != null){
+			getContext().logout();
 			setContent("loginMessage", new Raw("You are logged out"));
 		}else{
 			setContent("loginMessage", new Raw("Logout failed"));
@@ -58,10 +53,6 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 
 	public void setUserProvider(UserProvider userProvider) {
 		this.userProvider = userProvider;
-	}
-
-	public void setRoleProvider(RoleProvider roleProvider) {
-		this.roleProvider = roleProvider;
 	}
 
 	@Override

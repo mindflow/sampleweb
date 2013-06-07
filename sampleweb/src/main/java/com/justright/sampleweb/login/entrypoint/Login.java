@@ -6,7 +6,6 @@ import com.justright.entrypoint.Entrypoint;
 import com.justright.entrypoint.EntrypointConfig;
 import com.justright.sampleweb.login.component.LoginComponent;
 import com.justright.sampleweb.template.TemplateComponent;
-import com.justright.security.RoleProvider;
 import com.justright.security.UserProvider;
 
 @EntrypointConfig(uri="/Login",docType=Entrypoint.HTML_4_01_TRANSITIONAL_EN_DOCTYPE)
@@ -17,9 +16,6 @@ public class Login extends Entrypoint<Object>{
 	
 	@Inject
 	private UserProvider userProvider;
-	
-	@Inject
-	private RoleProvider roleProvider;
 	
 	@Override
 	public Object getInputModel() {
@@ -34,9 +30,8 @@ public class Login extends Entrypoint<Object>{
 	@Override
 	public void assemble() {
 		templateComponent = new TemplateComponent();
-		loginComponent = new LoginComponent(getSession());
+		loginComponent = new LoginComponent(getContext());
 		loginComponent.setUserProvider(userProvider);
-		loginComponent.setRoleProvider(roleProvider);
 		templateComponent.setContent("contentframe",loginComponent);
 	}
 

@@ -6,7 +6,7 @@ import com.justright.component.FormComponent;
 import com.justright.component.annotation.ClientStored;
 import com.justright.component.annotation.EventListener;
 import com.justright.component.annotation.InputValidation;
-import com.justright.session.Session;
+import com.justright.context.Context;
 import com.justright.xml.Raw;
 
 public class HelloComponent extends FormComponent<HelloComponentModel>{
@@ -19,7 +19,7 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 	@ClientStored 
 	private Raw raw;
 	
-	public HelloComponent(Session session){
+	public HelloComponent(Context session){
 		super(session,"HelloForm","helloComponent.xml");
 		System.out.println("HelloComponent constructs");
 	}
