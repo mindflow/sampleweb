@@ -3,7 +3,7 @@ package com.justright.sampleweb.login.entrypoint;
 import javax.inject.Inject;
 
 import com.justright.entrypoint.Entrypoint;
-import com.justright.entrypoint.EntrypointConfig;
+import com.justright.entrypoint.annotation.EntrypointConfig;
 import com.justright.sampleweb.login.component.LoginComponent;
 import com.justright.sampleweb.template.TemplateComponent;
 import com.justright.security.UserProvider;

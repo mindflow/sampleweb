@@ -1,8 +1,8 @@
 package com.justright.sampleweb.hello.entrypoint;
 
 import com.justright.entrypoint.Entrypoint;
-import com.justright.entrypoint.EntrypointConfig;
-import com.justright.entrypoint.RoleCheck;
+import com.justright.entrypoint.annotation.EntrypointConfig;
+import com.justright.entrypoint.annotation.RoleCheck;
 import com.justright.sampleweb.hello.component.HelloComponent;
 import com.justright.sampleweb.template.TemplateComponent;
 import com.justright.xml.Raw;

@@ -1,5 +1,7 @@
 package com.justright.sampleweb.hello.component;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.justright.component.FormComponent;
@@ -7,6 +9,7 @@ import com.justright.component.annotation.ClientStored;
 import com.justright.component.annotation.EventListener;
 import com.justright.component.annotation.InputValidation;
 import com.justright.context.Context;
+import com.justright.exception.WebException;
 import com.justright.xml.Raw;
 
 public class HelloComponent extends FormComponent<HelloComponentModel>{
@@ -47,6 +50,14 @@ public class HelloComponent extends FormComponent<HelloComponentModel>{
 		addContent("id1", new Raw("Button2 clicked. Input is: '" + getInputModel().getFormInput() + "' Client stored is: '" + someSavedValue + "'<br/> "));
 	}
 
+	@EventListener("button3")
+	public void button3Clicked() throws WebException {
+		System.out.println("HelloComponent receives button3 click");
+		List list = new ArrayList();
+		list.get(0).toString();
+		throw new WebException("My exception");
+	}
+	
 	@Override
 	public void assemble() {
 		raw = new Raw("Client stored value");

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div serverid="id1">
 	<input type="text" name="formInput" />
-	<input type="submit" name="button1" value="Button1" />
-	<input type="submit" name="button2" value="Button2" />
+	<input type="submit" name="button1" value="Submit data and set clientstore value" />
+	<input type="submit" name="button2" value="Submit data" />
+	<input type="submit" name="button3" value="Throw exception" />
 	<br />
 	<div serverid="id2"></div>
 	<div serverid="id3"></div>

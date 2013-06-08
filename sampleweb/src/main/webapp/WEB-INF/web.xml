@@ -7,6 +7,16 @@
      <param-name>contextConfigLocation</param-name>
      <param-value>classpath:applicationContext.xml</param-value>
    </context-param>
+	
+	<error-page>
+	  <error-code>404</error-code>
+	  <location>/Error</location>
+	</error-page>
+	
+	<error-page>
+	  <exception-type>java.lang.Throwable</exception-type >
+	  <location>/Error</location>
+	</error-page>
    
    <listener>
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -17,16 +27,24 @@
       <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
 	</servlet>
 	
-  <listener>
-    <listener-class>
-        org.springframework.web.context.request.RequestContextListener
-    </listener-class>
-  </listener>
+	<servlet>
+      <servlet-name>exceptionHandler</servlet-name>
+      <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+	</servlet>
+	
+    <listener>
+      <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
 	
     <servlet-mapping>
       <servlet-name>default</servlet-name>
       <url-pattern>/static/*</url-pattern>
     </servlet-mapping>
+    
+	<servlet-mapping>
+	  <servlet-name>exceptionHandler</servlet-name>
+	  <url-pattern>/Error</url-pattern>
+	</servlet-mapping>
     
 	<servlet-mapping>
 	  <servlet-name>entrypointLoader</servlet-name>
