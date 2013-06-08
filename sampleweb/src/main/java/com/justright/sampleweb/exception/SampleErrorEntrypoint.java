@@ -2,10 +2,10 @@ package com.justright.sampleweb.exception;
 
 import org.springframework.stereotype.Component;
 
-import com.justright.component.defaults.TemplateComponent;
 import com.justright.entrypoint.ErrorEntrypoint;
 import com.justright.entrypoint.annotation.EntrypointConfig;
 import com.justright.entrypoint.defaults.MissingEntrypoint;
+import com.justright.sampleweb.template.TemplateComponent;
 
 @Component("errorEntrypoint")
 @EntrypointConfig(uri="/Error",docType=MissingEntrypoint.HTML_4_01_TRANSITIONAL_EN_DOCTYPE)
@@ -16,10 +16,10 @@ public class SampleErrorEntrypoint extends ErrorEntrypoint {
 	@Override
 	public void assemble() {
 		templateComponent = new TemplateComponent();
+		templateComponent.setContent("contentframe",createOutput());
 	}
-
-	@Override
-	public String render() {
+	
+	public String createOutput(){
 		StringBuilder output = new StringBuilder();
 		if (getThrowable() == null && getStatusCode() == null) {
 			output.append("<h2>Error information is missing</h2>");
@@ -39,8 +39,12 @@ public class SampleErrorEntrypoint extends ErrorEntrypoint {
 		}
 		output.append("</body>");
 		output.append("</html>");
-		//return templateComponent.render();
 		return output.toString();
+	}
+
+	@Override
+	public String render() {
+		return templateComponent.render();
 	}
 	
 	private String asLineNumberInFile(String fileName, int lineNumber) {
