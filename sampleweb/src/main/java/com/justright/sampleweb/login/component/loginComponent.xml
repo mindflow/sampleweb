@@ -7,6 +7,6 @@
 	<input type="submit" name="login" value="Login"/>
 	<input type="submit" name="logout" value="Logout"/>
 	<br />
-	<div serverid="loginMessage"></div>
+	<div serverid="loginMessage"> </div>
 	<a href="/Hello?input=SomeUrlInputParam">The hello entrypoint</a>
 </div>

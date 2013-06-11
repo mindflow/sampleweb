@@ -1,6 +1,6 @@
 package com.justright.sampleweb.hello.component;
 
-public class HelloComponentModel {
+public class HelloFormComponentModel {
 	
 	private String input;
 	private String formInput;

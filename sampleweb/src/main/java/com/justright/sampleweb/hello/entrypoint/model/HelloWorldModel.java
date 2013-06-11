@@ -1,4 +1,4 @@
-package com.justright.sampleweb.hello.entrypoint;
+package com.justright.sampleweb.hello.entrypoint.model;
 
 public class HelloWorldModel {
 	private String input;

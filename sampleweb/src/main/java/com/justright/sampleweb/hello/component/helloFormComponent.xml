@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div>
+  <input type="text" name="formInput" />
+  <input type="submit" name="button1" value="Submit data and set clientstore value" />
+  <input type="submit" name="button2" value="Submit data" />
+  <input type="submit" name="button3" value="Throw exception" />
+  <button id="makeRequest">Get component from server (ajax)</button>
+  <br />
+  <div serverid="id2"> </div>
+  <div serverid="id3"> </div>
+  <div id="id4"> </div>
+  <div id="id5">blabla</div>
+</div>

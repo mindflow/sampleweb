@@ -9,6 +9,7 @@ import com.justright.entrypoint.EntrypointMap;
 import com.justright.entrypoint.ErrorEntrypoint;
 import com.justright.sampleweb.exception.SampleErrorEntrypoint;
 import com.justright.sampleweb.hello.entrypoint.HelloWorld;
+import com.justright.sampleweb.hello.entrypoint.HelloWorldContent;
 import com.justright.sampleweb.login.entrypoint.Login;
 
 @Configuration
@@ -19,6 +20,7 @@ public class AppConfig extends AbstractAppConfig{
 		return newConfigBuilder()
 				.withEntrypoint(Login.class)
 				.withEntrypoint(HelloWorld.class)
+				.withEntrypoint(HelloWorldContent.class)
 				.build();
 	}
 	
