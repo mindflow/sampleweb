@@ -8,6 +8,8 @@
      <param-value>classpath:applicationContext.xml</param-value>
    </context-param>
 	
+  <!-- Error pages -->
+	
 	<error-page>
 	  <error-code>404</error-code>
 	  <location>/Error</location>
@@ -18,9 +20,17 @@
 	  <location>/Error</location>
 	</error-page>
    
+  <!-- Listeners -->
+   
    <listener>
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
    </listener>
+
+    <listener>
+      <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    
+  <!-- Servlets -->   
    
 	<servlet>
       <servlet-name>entrypointLoader</servlet-name>
@@ -32,9 +42,7 @@
       <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
 	</servlet>
 	
-    <listener>
-      <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-    </listener>
+  <!-- Servlet mappings -->
 	
     <servlet-mapping>
       <servlet-name>default</servlet-name>
