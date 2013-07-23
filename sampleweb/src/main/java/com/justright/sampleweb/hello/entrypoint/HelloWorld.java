@@ -38,4 +38,5 @@ public class HelloWorld extends Entrypoint<Object> implements Renderable{
 			templateComponent.addContent("contentframe",new Raw(model.getInput()));
 		}
 	}
+
 }

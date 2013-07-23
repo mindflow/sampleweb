@@ -4,6 +4,7 @@ public class LoginComponentModel {
 
 	private String username;
 	private String password;
+	private String referrer;
 	
 	private String test;
 	
@@ -31,6 +32,14 @@ public class LoginComponentModel {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getReferrer() {
+		return referrer;
+	}
+
+	public void setReferrer(String referrer) {
+		this.referrer = referrer;
 	}
 	
 	

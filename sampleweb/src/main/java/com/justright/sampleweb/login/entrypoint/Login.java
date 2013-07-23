@@ -34,5 +34,4 @@ public class Login extends Entrypoint<Object>{
 		loginComponent.setUserProvider(userProvider);
 		templateComponent.setContent("contentframe",loginComponent);
 	}
-
 }

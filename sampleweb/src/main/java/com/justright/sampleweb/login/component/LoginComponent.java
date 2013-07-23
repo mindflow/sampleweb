@@ -13,8 +13,8 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	
 	private UserProvider userProvider;
 	
-	public LoginComponent(Context session){
-		super(session,"LoginForm","loginComponent.xml");
+	public LoginComponent(Context context){
+		super(context,"LoginForm","loginComponent.xml");
 	}
 
 	@Override
@@ -31,6 +31,7 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 		if(user != null){
 			getContext().login(user);
 			setContent("loginMessage", new Raw("You are logged in"));
+			getContext().sendRedirect(getInputModel().getReferrer());
 		}else{
 			setContent("loginMessage", new Raw("Login failed"));
 		}
