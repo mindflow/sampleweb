@@ -30,7 +30,7 @@ public class Login extends Entrypoint<Object>{
 	@Override
 	public void assemble() {
 		templateComponent = new TemplateComponent();
-		loginComponent = new LoginComponent(getContext());
+		loginComponent = new LoginComponent();
 		loginComponent.setUserProvider(userProvider);
 		templateComponent.setContent("contentframe",loginComponent);
 	}

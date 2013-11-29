@@ -32,7 +32,7 @@ public class HelloWorld extends Entrypoint<Object> implements Renderable{
 	public void assemble() {
 		System.out.println("HelloWorld Entrypoint assembles");
 		templateComponent = new TemplateComponent();
-		helloComponent = new HelloFormComponent(getContext());
+		helloComponent = new HelloFormComponent();
 		templateComponent.setContent("contentframe",helloComponent);
 		if(model.getInput() != null){
 			templateComponent.addContent("contentframe",new Raw(model.getInput()));

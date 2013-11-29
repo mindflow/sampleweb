@@ -13,8 +13,8 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	
 	private UserProvider userProvider;
 	
-	public LoginComponent(Context context){
-		super(context,"LoginForm","loginComponent.xml");
+	public LoginComponent(){
+		super("LoginForm","loginComponent.xml");
 	}
 
 	@Override

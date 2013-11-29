@@ -22,8 +22,8 @@ public class HelloFormComponent extends FormComponent<HelloFormComponentModel>{
 	@ClientStored 
 	private Raw raw;
 	
-	public HelloFormComponent(Context session){
-		super(session,"HelloForm","helloFormComponent.xml");
+	public HelloFormComponent(){
+		super("HelloForm","helloFormComponent.xml");
 		System.out.println("HelloComponent constructs");
 	}
 	
