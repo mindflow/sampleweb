@@ -37,6 +37,11 @@
       <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
 	</servlet>
 	
+  <servlet>
+      <servlet-name>externalFileServlet</servlet-name>
+      <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+  </servlet>
+	
 	<servlet>
       <servlet-name>exceptionHandler</servlet-name>
       <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
@@ -47,6 +52,11 @@
     <servlet-mapping>
       <servlet-name>default</servlet-name>
       <url-pattern>/static/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>externalFileServlet</servlet-name>
+      <url-pattern>/upload/*</url-pattern>
     </servlet-mapping>
     
 	<servlet-mapping>
