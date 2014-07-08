@@ -11,6 +11,7 @@ import com.justright.sampleweb.exception.SampleErrorEntrypoint;
 import com.justright.sampleweb.hello.entrypoint.HelloWorld;
 import com.justright.sampleweb.hello.entrypoint.HelloWorldContent;
 import com.justright.sampleweb.login.entrypoint.Login;
+import com.justright.servlet.ContextProcessorList;
 
 @Configuration
 public class AppConfig extends AbstractAppConfig{
@@ -27,5 +28,11 @@ public class AppConfig extends AbstractAppConfig{
 	@Bean(name={"errorEntrypoint"})
 	public ErrorEntrypoint defaultErrorEntrypoint(){
 		return new SampleErrorEntrypoint();
+	}
+
+	@Override
+	public ContextProcessorList contextProcessors() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
