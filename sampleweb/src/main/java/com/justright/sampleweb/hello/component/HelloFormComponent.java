@@ -1,17 +1,18 @@
 package com.justright.sampleweb.hello.component;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.justright.component.FormComponent;
 import com.justright.component.annotation.ClientStored;
 import com.justright.component.annotation.EventListener;
 import com.justright.component.annotation.InputValidation;
-import com.justright.context.Context;
+import com.justright.component.annotation.WebComponent;
 import com.justright.exception.WebException;
 import com.justright.xml.Raw;
 
+@WebComponent(id="HelloForm",xmlFile="helloFormComponent.xml")
 public class HelloFormComponent extends FormComponent<HelloFormComponentModel>{
 
 	private HelloFormComponentModel model;
@@ -23,8 +24,6 @@ public class HelloFormComponent extends FormComponent<HelloFormComponentModel>{
 	private Raw raw;
 	
 	public HelloFormComponent(){
-		super("HelloForm","helloFormComponent.xml");
-		System.out.println("HelloComponent constructs");
 	}
 	
 	@Override

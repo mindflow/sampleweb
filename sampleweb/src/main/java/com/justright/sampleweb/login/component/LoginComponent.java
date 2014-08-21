@@ -2,11 +2,12 @@ package com.justright.sampleweb.login.component;
 
 import com.justright.component.FormComponent;
 import com.justright.component.annotation.EventListener;
-import com.justright.context.Context;
+import com.justright.component.annotation.WebComponent;
 import com.justright.security.User;
 import com.justright.security.UserProvider;
 import com.justright.xml.Raw;
 
+@WebComponent(id="LoginForm",xmlFile="loginComponent.xml")
 public class LoginComponent extends FormComponent<LoginComponentModel>{
 	
 	private LoginComponentModel model;
@@ -14,7 +15,6 @@ public class LoginComponent extends FormComponent<LoginComponentModel>{
 	private UserProvider userProvider;
 	
 	public LoginComponent(){
-		super("LoginForm","loginComponent.xml");
 	}
 
 	@Override
